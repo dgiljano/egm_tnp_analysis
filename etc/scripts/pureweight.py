@@ -5,8 +5,8 @@ import libPython.puReweighter as pu
 
 puType = 0
 
-for sName in tnpSamples.Data2018_10_1_X.keys():    
-    sample = tnpSamples.Data2018_10_1_X[sName]
+for sName in tnpSamples.egm2017.keys():    
+    sample = tnpSamples.egm2017[sName]
     if sample is None : continue
 #    if not 'rec' in sName : continue
 #    if not 'Winter17' in sName : continue
@@ -15,10 +15,10 @@ for sName in tnpSamples.Data2018_10_1_X.keys():
     
     trees = {}
     trees['ele'] = 'tnpEleIDs'
-    trees['pho'] = 'tnpPhoIDs'
+#    trees['pho'] = 'tnpPhoIDs'
 #    trees['rec'] = 'GsfElectronToSC'
     for tree in trees:
-        dirout =  '/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_06152018/2018Data_1/PU/'
+        dirout =  '/data_CMS/cms/giljanovic/2017_data/PU/'
         mkdir(dirout)
         
         if   puType == 0 : sample.set_puTree( dirout + '%s_%s.pu.puTree.root'   % (sample.name,tree) )
